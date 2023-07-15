@@ -17,7 +17,7 @@ export default class MediaCard extends React.Component {
   }
 
   handleAddToFavrouite = (id) => {
-    fetch(`http://localhost:8080/${id}?api_key=8b5e3a87ebe14efb138bc4772c8b722c`, {
+    fetch(`http://localhost:8080/api/${id}?api_key=8b5e3a87ebe14efb138bc4772c8b722c`, {
       method: 'POST', // *GET, POST, PUT, DELETE, etc.
       mode: 'cors', // no-cors, cors, *same-origin
       cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
@@ -37,7 +37,7 @@ export default class MediaCard extends React.Component {
   }
   handleRemoveFavrouite = (id) => {
     // To delete the element from favourite 
-    fetch(`http://localhost:8080/${id}`, {
+    fetch(`http://localhost:8080/api/${id}`, {
       method: 'DELETE', // *GET, POST, PUT, DELETE, etc.
       mode: 'cors', // no-cors, cors, *same-origin
       cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached

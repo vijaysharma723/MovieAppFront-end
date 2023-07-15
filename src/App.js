@@ -18,7 +18,7 @@ class App extends React.Component {
   }
   componentWillMount() {
     // To fetch the favourite list
-    fetch('http://localhost:8080/Getallmovies')
+    fetch('http://localhost:8080/api/Getallmovies')
       .then(res => res.json())
       .then(res => {
         this.setState({ favouriteList: res.data })
@@ -26,7 +26,7 @@ class App extends React.Component {
   }
   componentDidMount() {
     // To fetch the trending movies
-    fetch('http://localhost:8080/TopRatedMovies?api_key=8b5e3a87ebe14efb138bc4772c8b722c')
+    fetch('http://localhost:8080/api/TopRatedMovies?api_key=8b5e3a87ebe14efb138bc4772c8b722c')
       .then(res => res.json())
       .then(res => {
         this.setState({ trendingMovies: res.data })
@@ -41,7 +41,7 @@ class App extends React.Component {
   }
   handleSearchClick = () => {
     console.log(this.state.search)
-    fetch(`http://localhost:8080/${this.state.searchValue}?api_key=8b5e3a87ebe14efb138bc4772c8b722c`)
+    fetch(`http://localhost:8080/api/${this.state.searchValue}?api_key=8b5e3a87ebe14efb138bc4772c8b722c`)
       .then(res => res.json())
       .then(res => {
         this.setState({ search: res.data, searchProcess: true })

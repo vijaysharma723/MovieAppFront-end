@@ -8,7 +8,7 @@ export default class favourite extends React.Component {
         }
     }
     componentDidMount() {
-        fetch('http://localhost:8080/Getallmovies')
+        fetch('http://localhost:8080/api/Getallmovies')
             .then(res => res.json())
             .then(res => {
                 this.setState({ data: res.data })
